@@ -1,7 +1,7 @@
 import random
 import math
-balance = 100000
 def getBal(use):
+    balance = 100000
     if use == 1:#log
         print(f"Your current balance is {balance}, you have made {balance - 100000}$ so far. You need {1000000000 - balance} more dollars to win.")
     elif use == 2:#reset
@@ -12,6 +12,8 @@ def getgamePlay():
    gametoplay = input("What game would you like to play? ").lower()
    if gametoplay == ("roulette"):
         print("You walk up to a free roulette table. \nA worker tells you to take a seat and to place your bets \n")
+        balance = 100000
+
         betforroulette = int(input(f"What is your bet, your current balance is: {balance}: "))
         print(f"You bet {betforroulette}.\n")
         rouletteplacenum = int(input("What number do you want to place your bets on? (1 - 31)\n"))
