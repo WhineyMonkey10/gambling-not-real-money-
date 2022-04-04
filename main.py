@@ -1,7 +1,7 @@
 import random
 import math
-balance = 100000
 def getBal(use):
+    balance = 100000
     if use == 1:#log
         balance = balance
         print(f"Your current balance is {balance}, you have made {balance - 100000}$ so far. You need {1000000000 - balance} more dollars to win.")
