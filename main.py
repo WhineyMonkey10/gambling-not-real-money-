@@ -2,7 +2,7 @@ import random
 import math
 balance = 100000
 def logBal():
-    print(f"Your current balance is {balance}, you have made {balance - 100000}$ so far. You need {1000000000 - balance} more dollars to win.")
+    ("Your current balance is {balance}, you have made {balance - 100000}$ so far. You need {1000000000 - balance} more dollars to win.")
 def resetBalance():
     balance = 100000
 def getBal():
@@ -20,7 +20,7 @@ if gametoplay == ("roulette"):
     balance = logBal
     print("You walk up to a free roulette table. \nA worker tells you to take a seat and to place your bets \n")
     betforroulette = int(input(f"What is your bet, your current balance is: {balance}: "))
-    if betforroulette >> getBal():
+    if betforroulette > getBal():
         print(f"Thats to much.\nYou need {betforroulette - balance} more")
     print(f"You bet {betforroulette}.\n")
     rouletteplacenum = int(input("What number do you want to place your bets on? (1 - 31)\n"))
