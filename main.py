@@ -1,15 +1,14 @@
 import random
 import math
-def getBal(use):
+balance = 100000
+def logBal():
+    print(f"Your current balance is {balance}, you have made {balance - 100000}$ so far. You need {1000000000 - balance} more dollars to win.")
+def resetBalance():
     balance = 100000
-    if use == 1:#log
-        balance = balance
-        print(f"Your current balance is {balance}, you have made {balance - 100000}$ so far. You need {1000000000 - balance} more dollars to win.")
-        return ""
-    elif use == 2:#reset
-        balance = 100000
-    elif use == 3:#return
-        return balance
+def getBal():
+    return balance
+def setbalance(amount):
+    balance = amount #set balance can be set in the code
 def getgamePlay():
    gametoplay = input(f"What game would you like to play (roulette, slots)? {getBal(1)} ").lower()
    return gametoplay
