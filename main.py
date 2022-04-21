@@ -8,19 +8,19 @@ def resetBalance():
 def getBal():
     return balance
 def setbalance(amount):
-    balance = amount #set balance can be set in the code
+    balance = amount
 def getgamePlay():
-   gametoplay = input(f"What game would you like to play (roulette, slots)? {getBal(1)} ").lower()
+   gametoplay = input(f"What game would you like to play (roulette, slots)? {logBal} ").lower()
    return gametoplay
 
 gametoplay = getgamePlay()
 
 
 if gametoplay == ("roulette"):
-    balance =  getBal(3)
+    balance = logBal
     print("You walk up to a free roulette table. \nA worker tells you to take a seat and to place your bets \n")
     betforroulette = int(input(f"What is your bet, your current balance is: {balance}: "))
-    if betforroulette >> getBal(3):
+    if betforroulette >> getBal():
         print(f"Thats to much.\nYou need {betforroulette - balance} more")
     print(f"You bet {betforroulette}.\n")
     rouletteplacenum = int(input("What number do you want to place your bets on? (1 - 31)\n"))
@@ -34,10 +34,12 @@ if gametoplay == ("roulette"):
         if rouletteplacenum == roulettenumland:
             print(f"It lands on {roulettenumland} and you win! Since you bet {betforroulette} your bet gets doubled, meaning you won {betforroulette * 2}$ Your balance is now {balance + betforroulette * 2}")
             balance = int((betforroulette * 2))
+            setbalance(balance)
             getgamePlay()
         else:
             print(f"It lands on {roulettenumland} and you loose! Since you bet {betforroulette} your bet gets taken by the house, meaning you lost {betforroulette}$ Your balance is now {balance - betforroulette}")
             balance = int((balance - betforroulette))
+            setbalance(balance)
             getgamePlay()
 if gametoplay == ("slots"):
     print("You walk up to the slots machine. \nYou see the machine and it askes you what you want to bet")
